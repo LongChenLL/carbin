@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>支付</title>
+    <link href="css/basic.css" rel="stylesheet">
+    <link href="css/public.css" rel="stylesheet">
+    <link href="css/pay.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+    <meta name="format-detection" content="telephone=no">
+</head>
+<body class="pay">
+    <section>
+        <div class="details">
+            <p class="m_l_0">
+                <span>捐赠人姓名：</span>
+                <span class="f_c_g" id="name"></span>
+            </p>
+            <p>
+                <span>移动电话：</span>
+                <span class="f_c_g" id="phone">124789553</span>
+            </p>
+            <p>
+                <span>捐赠金额：</span>
+                <span class="f_c_r money" id="money">¥200万</span>
+            </p>
+        </div>
+        <div class="topay">
+            <div class="con">
+                <div class="weixin cf">
+                    <i></i>
+                    <div>
+                        <p>微信支付</p>
+                        <p class="instructions">推荐安装微信5.0以上版本的用户使用</p>
+                    </div>
+                    <span class="icon check_on"></span>
+                </div>
+                <div class="zhifubao cf">
+                    <i></i>
+                    <div>
+                        <p>支付宝支付</p>
+                        <p class="instructions">推荐有支付宝账号的用户使用</p>
+                        <p class="instructions">本产品只提供服务类发票,若需要请联系客服95339</p>
+                    </div>
+                    <span class="icon check_off"></span>
+                </div>
+            </div>
+        </div>
+        <span class="bt-calculate bg-g">支付</span>
+    </section>
+</body>
+<!--<script src="lib/jquery.min.js"></script>-->
+<script src="lib/zepto.min.js"></script>
+<script src="js/index.js"></script>
+<script src="js/myitcast.js"></script>
+<script>
+    function pay(){
+        var item=JSON.parse(sessionStorage.getItem("donate"));
+        $("#name").html(item.name);
+        $("#phone").html(item.phone);
+        $("#money").html(item.money);
+    }
+    pay();
+</script>
+</html>

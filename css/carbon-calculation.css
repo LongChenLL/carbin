@@ -1,0 +1,186 @@
+.carbon-calculation .citySelector{
+    font-family: "microsoft yahei";
+    font-size: 0.3rem;
+    line-height: 0.96rem;
+}
+.carbon-calculation .citySelector>div{
+    background-color: #fff;
+    border-bottom: 1px solid #EDEDED;
+    padding: 0 5%;
+}
+.carbon-calculation .citySelector span{
+    width:30%;
+}
+.carbon-calculation .citySelector input{
+    width:68%;
+    text-align: right;
+    line-height: 0.96rem;
+    font-family: "microsoft yahei";
+}
+.carbon-calculation .m_t_3{
+    margin-top: 0.03rem;
+}
+.carbon-calculation .bt-calculate{
+    margin:0.6rem 0;
+    width: 4.95rem;
+    height: 0.8rem;
+    border-radius: 0.5rem;
+    color: #fff;
+    background-color: #e1524c;
+    margin-left: 0.66rem;
+    text-align: center;
+    line-height: 0.8rem;
+    font-size: 0.4rem;
+    font-family: "microsoft yahei";
+}
+.carbon-calculation .calculate{
+    margin: 0 0.14rem;
+    padding: 0.72rem 0.3rem 1.84rem 0.3rem;
+    background-color: #fff;
+    box-shadow: 0px 5px 8px #ccc;
+}
+.carbon-calculation .calculate .circle{
+    width: 1.4rem;
+    height: 1.4rem;
+    border-radius: 50%;
+    border: 2px solid #dedede;
+    text-align: center;
+    margin-bottom: 0.3rem;
+    position: relative;
+}
+.carbon-calculation .circle>span{
+    position: absolute;
+    font-size: 0.26rem;
+    font-family: "microsoft yahei";
+    width: 100%;
+    top:0.85rem;
+    left: 0;
+}
+.carbon-calculation .circle-1{
+    background: url("../images/icon1.png") 0.3rem 0.2rem no-repeat;
+    background-size: 50%;
+}
+.carbon-calculation .circle-2{
+    background: url("../images/icon2.png") 0.35rem 0.25rem no-repeat;
+    background-size: 50%;
+}
+.carbon-calculation .circle-3{
+    background: url("../images/icon3.png") 0.36rem 0.3rem no-repeat;
+    background-size: 50%;
+}
+.carbon-calculation .calculate .circle-3{
+    margin-right: 0;
+}
+.carbon-calculation .container{
+    text-align: center;
+    width: 1.44rem;
+    display: inline-block;
+    margin-right: 0.525rem;
+    float: left;
+}
+.carbon-calculation .container>span{
+    font-size: 0.6rem;
+    color: #13c82e;
+    font-family: "微软雅黑", "宋体", Arial, sans-serif;
+    display: block;
+}
+.carbon-calculation .container>i{
+    display: block;
+    width: 0.72rem;
+    height: 0.05rem;
+    background-color:#ededed;
+    margin: 0.05rem auto;
+}
+
+/*城市选择样式*/
+.carbon-calculation .m_t_20{
+    margin-top: 0.2rem;
+}
+.city{
+    font-family: "Microsoft Yahei";
+}
+.city .hot{
+    position: absolute;
+}
+.hotcon{
+    position: relative;
+    height: 3.5rem;
+}
+.city .tab{
+    background-color: #fff;
+    border-top:1px solid  #EDEDED;
+    border-bottom:1px solid  #EDEDED;
+    line-height: 0.96rem;
+    height: 0.96rem;
+    padding-bottom: 0.01rem;
+}
+.city .Tab>span{
+    width: 30%;
+    text-align: center;
+    font-size: 0.34rem;
+    float: left;
+    font-family: "Microsoft Yahei";
+    margin:0 10%;
+}
+.city .tab .on{
+    color: #57abef;
+    border-bottom: 2px solid #57abef;
+}
+.city .con{
+    padding: 0 0.1rem 0 0.2rem;
+}
+.city .com >.title{
+    color: #b4b4b4;
+    font-size: 0.3rem;
+    line-height: 0.8rem;
+}
+.city .search{
+    padding-bottom: 0.5rem;
+}
+.city .com span{
+    width: 1.34rem;
+    height: 0.74rem;
+    border-radius: 0.05rem;
+    line-height: 0.74rem;
+    text-align: center;
+    border: 1px solid #dadada;
+    font-size: 0.28rem;
+    background-color: #fff;
+    margin-right: 0.1rem;
+    float: left;
+    margin-top: 0.08rem;
+    color:#444D54 ;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    overflow: hidden;
+}
+
+.city  .search span{
+    width: 0.85rem;
+    height: 0.54rem;
+    line-height: 0.54rem;
+    font-family: "Times New Roman";
+}
+.city .A-Z ul{
+    margin-top: 0.25rem;
+
+}
+.city .A-Z ul li,
+.search_inp li{
+    font-size: 0.28rem;
+    font-family: "microsoft yahei";
+    color:#444D54 ;
+    line-height: 0.8rem;
+    background-color: #fff;
+    padding: 0 0.1rem 0 0.2rem;
+    border-bottom: 1px solid #E1E1E1;
+}
+.city .A-Z .m_r_25{
+    margin-right: 0.25rem !important;
+}
+.city .A-Z .on{
+    border: 1px solid #57abef;
+}
+.search_inp{
+
+}

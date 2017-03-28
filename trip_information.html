@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>出行捐赠</title>
+    <link href="css/basic.css" rel="stylesheet">
+    <link href="css/public.css" rel="stylesheet">
+    <link href="css/trip_information.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <script src="js/template.js"></script>
+</head>
+<body class="trip_information">
+<section>
+    <script type="text/text" id="current">
+        <div class="route b_b b_t">
+            <div class="div_1 b_b">
+                <i class="m_r_5 m_l_20"></i>
+                <span class="m_r_10">海南航空</span>
+                <span class="m_r_15">{{fltNo}}</span>
+                <span>{{t}}</span>
+             </div>
+             <div class="div_2">
+                <span class="m_r_70">{{dep}}</span>
+                <i></i>
+                <span>{{arr}}</span>
+             </div>
+        </div>
+    </script>
+    <div class="statistical-figure">
+        <div class="range b_b">
+            <div class="con cf">
+                <span class="f_30 fl">本次出行的总航程</span>
+                <span class="f_c_r f_42 fr js_dis">2000km</span>
+            </div>
+        </div>
+        <canvas id="drawing">您的浏览器不支持canvas</canvas>
+        <p class="msg">需植树xx棵，以达到绿色出行</p>
+        <div class="remaining b_t">
+            <div class="con p_t_20">
+                <p class="p1 cf">
+                    <span class="fl">排出二氧化碳</span>
+                    <span class="fr">200公斤/人</span>
+                </p>
+                <p class="p1 cf">
+                    <span class="fl f_c_y">已消</span>
+                    <span class="fr f_c_y">200公斤</span>
+                </p>
+                <p class="p2 cf">
+                    <span class="fl f_c_r">剩余</span>
+                    <span class="fr f_c_r">200公斤</span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="footer" id="godonate">为绿色出行捐赠植树</div>
+</section>
+</body>
+<script src="lib/zepto.min.js"></script>
+<script src="js/index.js"></script>
+<script src="js/myitcast.js"></script>
+<script>
+    (function(){
+        var canvas=document.getElementById("drawing");
+        var ctx=canvas.getContext("2d");
+        //获取屏幕的宽度
+        var  clientWidth = document.documentElement.clientWidth;
+        //根据设计图中的canvas画布的占比进行设置
+        var canvasWidth = Math.floor(clientWidth*680/750);
+        var canvasHight = Math.floor(clientWidth*600/750);
+        var r=Math.floor(clientWidth*200/750);
+        var x=Math.floor(clientWidth*330/750);
+        var y=Math.floor(clientWidth*320/750);
+
+        canvas.setAttribute('width',canvasWidth+'px');
+        canvas.setAttribute('height',canvasHight+'px');
+        canvas.style.border="1px solid #fff";
+
+        /*画黄色部分*/
+        ctx.moveTo(x,y);
+        var e_r=160;
+        ctx.arc(x,y,r,-70*Math.PI/180,e_r*Math.PI/180);
+        ctx.closePath();
+        ctx.fillStyle="#ECCE54";
+        ctx.fill();
+
+        /*画红色部分*/
+        ctx.beginPath();
+        ctx.moveTo(x,y);
+        var e_y=290;
+        ctx.arc(x,y,r,e_r*Math.PI/180,e_y*Math.PI/180);
+        ctx.closePath();
+        ctx.fillStyle="#E1514C";
+        ctx.fill();
+
+        /*画黄色直线*/
+        ctx.beginPath();
+        ctx.moveTo(x+clientWidth*150/750,y-clientWidth*270/750);
+        ctx.lineTo(x+clientWidth*200/750,y-clientWidth*270/750);
+        ctx.lineWidth=5;
+        ctx.strokeStyle="#ECCE54"
+        ctx.stroke();
+
+        /*写黄色字*/
+        var p=56;
+        ctx.font = "1.4rem Consolas";
+        ctx.fillStyle="#ECCE54";
+        ctx.fillText(p+"%",x+clientWidth*220/750,y-clientWidth*255/750,y);
+
+        /*画红色直线*/
+        ctx.beginPath();
+        ctx.moveTo(x+clientWidth*150/750,y-clientWidth*200/750);
+        ctx.lineTo(x+clientWidth*200/750,y-clientWidth*200/750);
+        ctx.lineWidth=5;
+        ctx.strokeStyle="#E1514C";
+        ctx.stroke();
+
+        /*写红色字*/
+        var n=44;
+        ctx.font = "1.4rem Consolas";
+        ctx.fillStyle="#E1514C";
+        ctx.fillText(n+"%", x+clientWidth*220/750,y-clientWidth*185/750);
+
+        var fltInfolist=JSON.parse(sessionStorage.getItem("fltInfolist"));
+        var list=fltInfolist.fltInfolist;
+        var id=sessionStorage.getItem("tripid");
+        var fltNo=list[id].fltNo,
+                time=list[id].departDate,
+                dep=list[id].dep,
+                arr=list[id].arr,
+                dis=list[id].distance;
+        var t=$$.split(time);
+        console.log(list);
+        console.log(fltInfolist.cid);
+        console.log(id);
+        var film={
+            fltNo:fltNo,
+            t:t,
+            dep:dep,
+            arr:arr
+        }
+        var html=$$.BindTemplate(film,"current");
+        $("section").prepend(html);
+        $(".js_dis").html(dis);
+
+        /*请求接口*/
+        var params={
+            cid:fltInfolist.cid,
+            fltNo:fltNo,
+            fltDate:time,
+            legs:dep+"-"+arr
+        };
+        $$.ajax(params,'http://10.21.136.133:8088/trip/frontend/appGreen/selPlayAndCarbon',function(data) {
+           console.log(data)
+        })
+
+
+        $("#godonate").on("click",function(){
+            var url='http://10.21.136.133:8088/trip/frontend/appGreen/donate/donate.html';
+            window.location.href=url;
+        })
+
+    }())
+</script>
+</html>

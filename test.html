@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>无标题页</title>
+    <style type="text/css">
+        *{margin:0px auto}
+        body{margin:0px auto 0px auto;text-align:center;padding:0px;}
+    </style>
+</head>
+<body>
+<div id="div123" style="width:980px;height:250px;background:red;display:block;margin-top:550px;">a<br />b<br />c<br /></div>
+<script type="text/javascript">
+    var obj = document.getElementById("div123");
+    var height=0,current;
+    var Timer;
+    obj.style.display="block";
+    Timer=setInterval(SlideDown,0.5);
+    function SlideDown(){
+        current = GetHeight();
+        if(current>=0){
+            clearInterval(Timer);
+            setTimeout(function(){
+                Timer = setInterval(SlideUp,0.5);
+            },0.5);
+        }
+        else{
+            current++;
+            SetHeight(current);
+        }
+    }
+    function SlideUp(){
+        if(current<=height){
+            clearInterval(Timer);
+        }
+        else{
+            current--;
+            SetHeight(current);
+        }
+    }
+    function GetHeight(){
+        return parseInt(obj.style.marginTop);
+    }
+    function SetHeight(h){
+        obj.style.marginTop=h+"px";
+    }
+</script>
+</body>
+</html>

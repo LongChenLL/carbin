@@ -1,0 +1,50 @@
+.green-talent{
+    font-family: "Microsoft Yahei";
+}
+.green-talent header{
+    background-color: #E1514C;
+    line-height: 0.75rem;
+    font-size: 0.34rem;
+    text-align: center;
+    color: #fff;
+}
+.green-talent li{
+    font-size: 0.26rem;
+    padding: 0 5%;
+    line-height: 0.8rem;
+    color: #444D54;
+    border-bottom: 1px solid #EDEDED;
+}
+.green-talent li > span:nth-child(1){
+    width: 9%;
+    float: left;
+    position: relative;
+}
+.green-talent li > span:nth-child(2){
+    width: 30%;
+    float: left;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    overflow: hidden;
+    margin-right: 5%;
+}
+.green-talent li > span:nth-child(3){
+    width: 35%;
+    float: left;
+}
+.green-talent li > span:nth-child(4){
+    float: right;
+    width: 16%;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    overflow: hidden;
+}
+.green-talent .list{
+    width: 0.5rem;
+    height: 0.7rem;
+    background: url("../images/list.png") no-repeat;
+    background-size: 100%;
+    position: absolute;
+    top:0.18rem;
+    left:-0.19rem;
+}

@@ -1,0 +1,158 @@
+.exchange-tickets header{
+    width: 100%;
+    height: 3.5rem;
+    background: url("../images/exchange-tickets-bg.png") no-repeat top center;
+    background-size: 100% 100%;
+}
+.exchange-tickets section{
+    position: relative;
+    font-family: "Microsoft Yahei";
+}
+.exchange-tickets .content{
+    height: 7.58rem;
+    background-color: #fff;
+    border-radius: 0.3rem;
+    box-shadow: 0px 5px 8px #ccc;
+    position: absolute;
+    padding: 0 5%;
+}
+.exchange-tickets .content-1{
+    width: 62%;
+    margin: 0 14%;
+    top:-1.05rem;
+}
+.exchange-tickets .content-2{
+    width: 68%;
+    margin: 0 11%;
+    top:-1.25rem;
+}
+.exchange-tickets .content-3{
+    width: 74%;
+    margin: 0 8%;
+    top:-1.45rem;
+    color: #444D54;
+}
+.exchange-tickets .content-3>.title{
+    line-height: 1.5rem;
+    font-size: 0.36rem;
+    text-align: center;
+    height: 1.3rem;
+}
+.exchange-tickets .content-3>.message{
+    line-height: 1rem;
+    border-bottom: 1px solid #EDEDED;
+    font-size: 0.3rem;
+}
+.exchange-tickets .m_t_60{
+    margin-top: 0.6rem;
+}
+.exchange-tickets .integral{
+    text-align: right;
+    color: #28ba5f;
+    border: none;
+}
+.exchange-tickets .sure{
+    color: #fff;
+    background-color: #e1524c;
+    width: 1.5rem;
+    height: 0.5rem;
+    position: absolute;
+    font-size: 0.24rem;
+    line-height:0.5rem ;
+    text-align: center;
+    font-family: "Microsoft Yahei";
+    border-radius: 0.05rem;
+    top: 5rem;
+    left: 2.44rem;
+}
+.exchange-tickets .title + p{
+    font-size: 0.28rem;
+    text-align: center;
+    padding-bottom: 0.3rem;
+    line-height: 0.6rem;
+}
+.exchange-tickets .f_14{
+    font-size: 0.26rem;
+}
+.exchange-tickets .f_16{
+    font-size: 0.32rem;
+}
+.exchange-tickets .f_24{
+    font-size: 0.36rem;
+}
+.exchange-tickets .remind{
+    margin-top: 0.35rem;
+}
+.exchange-tickets .remind > i{
+    width: 0.28rem;
+    height: 0.28rem;
+    background: url("../images/note.png") no-repeat;
+    background-size: 100%;
+    margin-top: 0.05rem;
+}
+.exchange-tickets .remind>span{
+    width: 90%;
+    margin-left: 0.1rem;
+    font-size: 0.28rem;
+}
+.exchange-tickets .remind >span >em{
+    font-weight: 600;
+}
+.exchange-tickets .carbon_foun{
+    margin-top: 0.45rem;
+}
+.exchange-tickets .carbon_foun >i {
+    width: 2.4rem;
+    height: 0.56rem;
+    background: url("../images/carbon_foun.png")  center no-repeat;
+    background-size: 100%;
+    float: right;
+}
+.exchange-tickets .carbon_foun >span{
+    font-size: 0.22rem;
+    line-height: 0.56rem;
+    font-family: "Microsoft Yahei";
+    float: left;
+    color: #9B9B9B;
+    padding-left: 0.1rem;
+}
+.exchange-tickets .dot{
+    position: absolute;
+    text-align: center;
+    left:2.6rem ;
+    top:7.1rem;
+}
+.exchange-tickets .dot > i{
+    width: 0.18rem;
+    height: 0.18rem;
+    border-radius: 50%;
+    background-color: #F7C6C4;
+    float: left;
+    margin: 0 0.05rem;
+}
+.exchange-tickets .dot .on{
+    width: 0.2rem;
+    height: 0.2rem;
+    background-color:#E1514C;
+    margin-top: -0.02rem;
+}
+.exchange-tickets .tab{
+    margin-top: 1rem;
+    line-height: 0.9rem;
+    color: #444D54;
+    font-size: 0.3rem;
+    height: 0.9rem;
+    text-align: center;
+    position: absolute;
+    top:6.8rem;
+    width: 100%;
+}
+.exchange-tickets .con{
+    height: 5rem;
+}
+.exchange-tickets .tab > span{
+    width: 2.1rem;
+}
+.exchange-tickets .tab .on{
+    border-top: 0.1rem solid #e1524c;
+}

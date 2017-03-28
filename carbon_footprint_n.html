@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>碳足迹</title>
+    <link href="css/basic.css" rel="stylesheet">
+    <link href="css/public.css" rel="stylesheet">
+    <link href="css/carbon_footprint.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+    <meta name="format-detection" content="telephone=no">
+</head>
+<body class="carbon_footprint">
+    <header class="bg_trip">
+        <!--<div class="mileage">-->
+            <!--<p><em>2000</em>km</p>-->
+            <!--<p>飞行里程</p>-->
+        <!--</div>-->
+        <div class="emissions">
+            <p><em>2000</em>kg</p>
+            <p>排碳量</p>
+        </div>
+        <div class="consumption">
+            <p><em>450</em>kg</p>
+            <p>消碳量</p>
+        </div>
+    </header>
+    <section>
+        <div class="consume b_t">
+            <!--<div class="cf b_b js_list">-->
+                <!--<span class="span1">对换50kg</span>-->
+                <!--<span class="span2">2017年1月23日</span>-->
+            <!--</div>-->
+            <!--<div class="cf b_b js_list">-->
+                <!--<i class="integral"></i>-->
+                <!--<span class="span1">对换50kg</span>-->
+                <!--<span class="span2">2017年1月23日</span>-->
+            <!--</div>-->
+            <!--<div class="cf b_b js_list">-->
+                <!--&lt;!&ndash;<i class="cash"></i>&ndash;&gt;-->
+                <!--<span class="span1">对换50kg</span>-->
+                <!--<span class="span2">2017年1月23日</span>-->
+            <!--</div>-->
+            <!--<div class="cf b_b js_list">-->
+                <!--&lt;!&ndash;<i class="integral"></i>&ndash;&gt;-->
+                <!--<span class="span1">对换50kg</span>-->
+                <!--<span class="span2">2017年1月23日</span>-->
+            <!--</div>-->
+        </div>
+        <div class="tab b_t hide">
+            <span >出行记录</span>
+            <span class="on">消碳记录</span>
+        </div>
+    </section>
+</body>
+<script src="lib/zepto.min.js"></script>
+<script src="js/index.js"></script>
+<script>
+    function carbonFootprint(){
+        var list=JSON.parse(sessionStorage.getItem("list"));
+        for(var i= 0;i<list.length;i++){
+            var date=list[i].createTime.substr(0,10);
+            if(list[i].donationWays=="INTEGRALEXCHANGE"){
+                var html='<div class="cf b_b js_list">' +
+                            '<i class="integral"></i>' +
+                            '<span class="span1">对换50kg</span>' +
+                            '<span class="span2">'+date+'</span>' +
+                        '</div>'
+                $(".consume").append(html);
+            }
+            else if(list[i].donationWays=="CASHPAY"){
+                var _html='<div class="cf b_b js_list">' +
+                            '<i class="cash"></i>' +
+                            '<span class="span1">对换50kg</span>' +
+                            '<span class="span2">'+date+'</span>' +
+                        '</div>'
+                $(".consume").append(_html);
+            }
+        }
+        $(".consume").delegate("div","click",function(){
+            var id=$(this).index();
+            sessionStorage.setItem("listid",id);
+            var url='http://10.21.136.133:8088/trip/frontend/appGreen/donate/buy-tickets.html';
+            window.location.href=url;
+        })
+    }
+    carbonFootprint();
+</script>
+</html>

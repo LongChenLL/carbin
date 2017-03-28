@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>碳计算器</title>
+    <link href="css/basic.css" rel="stylesheet">
+    <link href="css/public.css" rel="stylesheet">
+    <link href="css/carbon-calculation.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+    <meta name="format-detection" content="telephone=no">
+</head>
+<body>
+    <section class="carbon-calculation">
+        <div class="citySelector">
+            <div>
+                <span>出发</span>
+                <input placeholder="北京" id="start">
+            </div>
+            <div class="m_t_5 b_t">
+                <span>到达</span>
+                <input placeholder="海口" id="arrive">
+            </div>
+        </div>
+        <div class="bt-calculate-con">
+            <span class="bt-calculate" id="calculate">计算碳排</span>
+            <div class="calculate cf">
+                <div class="container">
+                    <div class="circle circle-1">
+                        <span>碳排放量</span>
+                    </div>
+                    <span id="htl"></span>
+                    <i></i>
+                </div>
+                <div class="container">
+                    <div class="circle circle-2">
+                        <span>需植树</span>
+                    </div>
+                    <span id="xzs"></span>
+                    <i></i>
+                </div>
+                <div class="container m_r_0">
+                    <div class="circle circle-3">
+                        <span>折算金额</span>
+                    </div>
+                    <span id="zsjr"></span>
+                    <i></i>
+                </div>
+            </div>
+            <span class="bt-calculate bg-g" id="donate">捐赠</span>
+        </div>
+        <div class="city m_t_20 hide">
+            <div class="tab cf">
+                <div class="cf Tab" id="tab">
+                    <span class="on guonei">国内</span>
+                    <span class="guoji">港澳台/国外</span>
+                </div>
+                <div class="hotcon">
+
+                </div>
+                <div class="search com cf">
+                    <p class="title con">字母检索</p>
+                    <div class="search_con con cf">
+                        <span>A</span>
+                        <span>B</span>
+                        <span>C</span>
+                        <span>D</span>
+                        <span>E</span>
+                        <span>F</span>
+                        <span>G</span>
+                        <span>H</span>
+                        <span>I</span>
+                        <span>J</span>
+                        <span>K</span>
+                        <span>L</span>
+                        <span>M</span>
+                        <span>N</span>
+                        <span>O</span>
+                        <span>P</span>
+                        <span>Q</span>
+                        <span>R</span>
+                        <span>S</span>
+                        <span>T</span>
+                        <span>U</span>
+                        <span>V</span>
+                        <span>W</span>
+                        <span>X</span>
+                        <span>Y</span>
+                        <span>Z</span>
+                    </div>
+                    <div class="A-Z search com hide">
+                        <p class="cf con">
+                            <span class="m_r_25 on" id="search_val"></span>
+                            <span id="A_Z">A-Z</span>
+                        </p>
+                        <ul class="inner-city">
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ul class="search_inp m_t_20 hide"></ul>
+    </section>
+</body>
+<!--<script src="lib/jquery.min.js"></script>-->
+<script src="lib/zepto.min.js"></script>
+<script src="js/index.js"></script>
+<script src="js/data.js"></script>
+<script src="js/data_search.js"></script>
+<script src="js/city.js"></script>
+<script src="js/myitcast.js"></script>
+<script>
+    function carbonCalculation(){
+        var start=new city("start");
+        var arrive=new city("arrive");
+        var money=$("#zsjr");
+        var s=$("#start");
+        var a=$("#arrive");
+        $("#A_Z").on('click',function(){
+            $(".A-Z").addClass("hide");
+            $(".search_con").removeClass("hide");
+        });
+        $("#donate").on('click',function(){
+            var params={
+                money: money.html()
+            };
+            $$.ajax(params,'http://10.21.136.133:8088/trip/frontend/appGreen/donate',function(data){
+                var appGreenSession=data.appGreenSession;
+                var projectIntroduce=data.projectIntroduce;
+                var item={
+                    money:money.text(),
+                    appGreenSession:appGreenSession,
+                    projectIntroduce:projectIntroduce
+                }
+                sessionStorage.setItem("carbonCalculation",JSON.stringify(item));
+                window.location.href="http://10.21.136.133:8088/trip/frontend/appGreen/donate/donate.html";
+            })
+        });
+        $("#tab span").on('click',function(){
+            $(this).addClass("on").siblings().removeClass("on");
+        });
+        $("#calculate").on('click',function(){
+            if($$.trim(s.val())==""){
+                alert("请选择出发城市");
+                s.focus();
+            }
+            else if($$.trim(a.val())==""){
+                alert("请选择到达城市");
+                s.focus();
+            }
+            else{
+                var params={
+                    from:$("#start").val(),
+                    to:$("#arrive").val()
+                };
+                $.ajax({
+                    type: "post",
+                    dataType: "json",
+                    url:'http://10.21.136.133:8088/trip/frontend/greenFrontend/greenHc',
+                    data:params,
+//              contentType: 'application/x-www-form-urlencoded;charset=utf-8',
+                    success:function (data){
+                        $("#htl").html(data.htl);
+                        $("#xzs").html(data.xzs);
+                        money.html(data.zsjr);
+                    }
+                })
+            }
+        });
+    }
+    carbonCalculation();
+</script>
+</html>

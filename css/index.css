@@ -1,0 +1,67 @@
+.index{
+    background-color: #fff;
+}
+.index header{
+    width: 100%;
+    height: 5.8rem;
+    background: url("../images/index-bg.png") no-repeat top center;
+    background-size: 100% 100%;
+    text-align: center;
+    color: #fff;
+    font-family: "Microsoft Yahei";
+}
+.index .title{
+    font-size: 0.36rem;
+    padding-top:1.3rem;
+}
+.index section{
+    padding: 0 0.2rem;
+    text-align: center;
+    margin-top: 1rem;
+    position: relative;
+}
+.index .bg{
+    width: 100%;
+    height: 4.3rem;
+    background: url("../images/circle-bg.png") no-repeat;
+    background-size: 100%;
+}
+.index .tree{
+    width: 1.45rem;
+    height: 1.45rem;
+    background: url("../images/tree.png");
+    background-size: 100%;
+    position: absolute;
+    top:2.3rem;
+    left: 39%;
+}
+.index .circle-green{
+    width: 1.48rem;
+    height:1.48rem;
+    border-radius: 50%;
+    position: absolute;
+}
+.index .circle-green-1{
+    top:1.9rem;
+    left: 0.4rem;
+    background: url("../images/sprite-index.png") 0 -4.49rem no-repeat ;
+    background-size: 100%;
+}
+.index .circle-green-2{
+    top:0.45rem;
+    left: 1.5rem;
+    background: url("../images/sprite-index.png") 0 0 no-repeat ;
+    background-size: 100%;
+}
+.index .circle-green-3{
+    top:0.45rem;
+    left: 3.3rem;
+    background: url("../images/sprite-index.png") 0 -3rem no-repeat ;
+    background-size: 100%;
+}
+.index .circle-green-4{
+    top:1.9rem;
+    left: 4.4rem;
+    background: url("../images/sprite-index.png") 0 -1.5rem no-repeat ;
+    background-size: 100%;
+}

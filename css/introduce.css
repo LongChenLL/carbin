@@ -1,0 +1,20 @@
+.introduce section{
+    padding: 0 0.14rem;
+    padding-bottom: 0.8rem;
+}
+.introduce p{
+    font-size: 0.3rem;
+    font-family: "Microsoft Yahei";
+    text-align: justify;
+}
+.introduce .title{
+    line-height: 0.7rem;
+    padding-left: 0.32rem;
+    color: #aaaaaa;
+}
+.introduce .content{
+    text-indent:1em;
+    padding:0.38rem  0.4rem 0.34rem 0.2rem;
+    background-color: #fff;
+    box-shadow: 0px 3px 6px #ccc;
+}

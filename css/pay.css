@@ -1,0 +1,101 @@
+body{
+    overflow: hidden;
+}
+.pay .details{
+    width: 100%;
+    height: 2.2rem;
+    font-size: 0.3rem;
+    background-color: #fff;
+    font-family: "microsoft yahei";
+    padding:0.3rem 0 0 0.42rem;
+    box-shadow: 0px 5px 8px #ccc;
+}
+.pay .details>p{
+    line-height: 0.6rem;
+    margin-left: 0.3rem;
+}
+.pay .m_l_0{
+    margin-left: 0 !important;
+}
+.pay .money{
+    font-size: 0.36rem;
+}
+.pay .topay{
+    border-top: 1px solid #EDEDED;
+    border-bottom: 1px solid #EDEDED;
+    background-color: #fff;
+    font-family: "microsoft yahei";
+    /*padding: 0.42rem 0 0 0.28rem;*/
+    margin-top: 0.36rem;
+}
+.pay .con{
+    padding: 0 0.3rem;
+}
+.pay .weixin,
+.pay .zhifubao{
+    padding:0.42rem 0.13rem 0.36rem 0.13rem;
+    position: relative;
+}
+.pay .weixin{
+    border-bottom: 1px solid #EDEDED;
+}
+.pay .weixin > i,
+.pay .weixin > div,
+.pay .zhifubao > i,
+.pay .zhifubao > div{
+    float: left;
+}
+.pay .weixin > div>p,
+.pay .zhifubao > div>p{
+    font-size: 0.3rem;
+    line-height: 0.45rem;
+}
+.pay .weixin > i{
+    width: 0.78rem;
+    height: 0.78rem;
+    background: url("../images/weixin.png") no-repeat;
+    background-size: 100%;
+}
+.pay .zhifubao > i{
+    width: 0.78rem;
+    height: 0.78rem;
+    background: url("../images/zhifubao.png") no-repeat;
+    background-size: 100%;
+}
+.pay .weixin > div,
+.pay .zhifubao > div{
+    margin-left: 0.2rem;
+    width: 70%;
+}
+.pay .topay .instructions{
+    font-size: 0.26rem;
+    color: #aaaaaa;
+}
+.pay .icon{
+    position: absolute;
+    width: 0.48rem;
+    height: 0.48rem;
+    right: 0.15rem;
+    top:0.5rem;
+}
+.pay .check_on{
+    background: url("../images/check_on.png") no-repeat;
+    background-size: 100%;
+}
+.pay .check_off{
+    background: url("../images/check_off.png") no-repeat;
+    background-size: 100%;
+}
+.pay .bt-calculate{
+    margin:0.8rem 0;
+    width: 4.95rem;
+    height: 0.8rem;
+    border-radius: 0.5rem;
+    color: #fff;
+    background-color: #e1524c;
+    margin-left: 0.66rem;
+    text-align: center;
+    line-height: 0.8rem;
+    font-size: 0.4rem;
+    font-family: "microsoft yahei";
+}

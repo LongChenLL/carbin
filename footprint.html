@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>碳足迹</title>
+    <link href="css/basic.css" rel="stylesheet">
+    <link href="css/public.css" rel="stylesheet">
+    <link href="css/footprint.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+    <meta name="format-detection" content="telephone=no">
+</head>
+<body class="footprint">
+    <section>
+        <div class="login cf js_login">
+            <span class="on" id="account">手机号姓名登录</span>
+            <span id="shoujihao">手机号快捷登录</span>
+        </div>
+        <div class="quantity cf">
+            <span class="fl"></span>
+            <span class="fr f_c_r" id="green_talent">绿色达人<i class="arrows"></i></span>
+        </div>
+        <div class="shoujihao hide main">
+            <p class="inp">请输入您的手机号码来查询您的碳足迹</p>
+            <div class="phone cf">
+                <span>手机号码</span>
+                <input placeholder="请输入手机号码" class="fr" type="number" id="phone">
+            </div>
+            <!--<div class="m_t_3 b_t code">-->
+            <!--<span>验证码</span>-->
+            <!--<input placeholder="填写验证码">-->
+            <!--<span class="getcode on">获取验证码</span>-->
+            <!--</div>-->
+            <!--<a href="#">收不到验证码？</a>-->
+            <span class="bt-query bg-g" id="query">查询</span>
+            <!--弹出层-->
+            <!--<div class="mask">-->
+            <!--<div class="box">-->
+            <!--<div class="m_t_10">尊敬的旅客：</div>-->
+            <!--<p>欢迎您使用福州航空不正常航班自助改期功能，为了您能更好的使用该功能，请您在使用前仔细阅读以下内容：</p>-->
+            <!--<i id="colse">×</i>-->
+            <!--</div>-->
+            <!--</div>-->
+        </div>
+        <div class="account main">
+            <p class="inp">请登录您的常旅客账号来查询您的碳足迹</p>
+            <div class="phone cf pub">
+                <span>手机号</span>
+                <input placeholder="手机号/金鹏卡号" class="fr pub js_phone" type="number">
+            </div>
+            <div class="m_t_3 b_t code cf">
+                <span>姓名</span>
+                <input placeholder="姓名/生日" class="pub fr w_68 m_r_0 js_name">
+            </div>
+            <span class="bt-query bg-g" id="login">登录</span>
+        </div>
+    </section>
+</body>
+<!--<script src="lib/jquery.min.js"></script>-->
+<script src="lib/zepto.min.js"></script>
+<script src="js/index.js"></script>
+<script src="js/myitcast.js"></script>
+<script>
+    function footprint(){
+        $(".js_login span").on("click",function(){
+            $(this).addClass("on").siblings().removeClass("on");
+            var index=$(this).index();
+            $(".main").eq(index).addClass("hide").siblings().removeClass("hide");
+        })
+        $("#green_talent").on("click",function(){
+            var url='http://10.71.201.55/web/green-talent.html';
+            window.location.href=url;
+        })
+        $("#query").on("click",function(){
+            var mobile=$("#phone");
+            if($$.trim(mobile.val()) ==""){
+                alert("请填写电话号码");
+                mobile.focus();
+            }
+            else{
+                var params={
+                    mobile:mobile.val()
+                };
+                $$.ajax(params,'http://10.21.136.133:8088/trip/frontend/appGreen/selCarbon',function(data) {
+                    var list=[];
+                    for(var i=0;i<data.list.length;i++){
+                        var params={};
+                        params.projectIntroducer=data.list[i].projectIntroducer;
+                        params.donationWays=data.list[i].donationWays;
+                        params.money=data.list[i].money;
+                        params.createTime=data.list[i].createTime;
+                        params.mobile=data.list[i].mobile;
+//                    params.Id=data.list[i].Id;
+                        list.push(params);
+                    }
+                    sessionStorage.setItem("list",JSON.stringify(list));
+                    console.log(list)
+                    var url='http://10.21.136.133:8088/trip/frontend/appGreen/donate/carbon_footprint_n.html';
+                    window.location.href=url;
+                })
+            }
+        })
+        /*账号密码登录*/
+        $("#login").on("click",function(){
+            var phone=$(".js_phone");
+            var name=$(".js_name");
+            if($$.trim(phone.val()) ==""){
+                alert("请填写手机号码");
+                phone.focus();
+            }
+            else if($$.trim(name.val()) ==""){
+                alert("请填写姓名或生日");
+                name.focus();
+            }
+            else{
+                var params={
+                    cid:phone.val(),
+                    name:name.val()
+                };
+                $$.ajax(params,'http://10.21.136.133:8088/trip/frontend/appGreenFfp/selTripRecord',function(data) {
+                    if(data.fltInfoSize>0){
+                        var playSum=data.playSum;
+                        var cosPaySum=data.cosPaySum;
+//                        var cid=data.cid;
+                        var fltInfolist=data.fltInfo;
+                        console.log(fltInfolist);
+                        var _params={};
+                        _params.playSum=playSum;
+                        _params.cosPaySum=cosPaySum;
+                        _params.fltInfolist=fltInfolist;
+                        _params.cid=phone.val();
+                        _params.name=name.val();
+                        sessionStorage.setItem("fltInfolist",JSON.stringify(_params));
+                    }
+                    var url='http://10.21.136.133:8088/trip/frontend/appGreen/donate/carbon_footprint.html';
+                    window.location.href=url;
+                })
+            }
+        })
+    }
+    footprint();
+</script>
+</html>

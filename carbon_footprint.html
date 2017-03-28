@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>碳足迹</title>
+    <link href="css/basic.css" rel="stylesheet">
+    <link href="css/public.css" rel="stylesheet">
+    <link href="css/carbon_footprint.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+    <meta name="format-detection" content="telephone=no">
+</head>
+<body class="carbon_footprint">
+    <header class="bg_trip">
+        <div class="mileage">
+            <p><em>2000</em>km</p>
+            <p>飞行里程</p>
+        </div>
+        <div class="emissions">
+            <p><em>2000</em>kg</p>
+            <p>排碳量</p>
+        </div>
+        <div class="consumption">
+            <p><em>450</em>kg</p>
+            <p>消碳量</p>
+        </div>
+    </header>
+    <section>
+        <div class="trip main js_trip">
+            <!--<div class="implementation b_b b_t m_t_5">-->
+                <!--<div class="div_1 b_b">-->
+                    <!--<i class="m_r_5"></i>-->
+                    <!--<span class="m_r_10">海南航空</span>-->
+                    <!--<span class="m_r_15 js_fltNo">HU0129</span>-->
+                    <!--<span>2016-08-21</span>-->
+                    <!--&lt;!&ndash;<span class="_implementation">已出行</span>&ndash;&gt;-->
+                <!--</div>-->
+                <!--<div class="div_2">-->
+                    <!--<span>海口</span>-->
+                    <!--<i></i>-->
+                    <!--<span>北京</span>-->
+                    <!--<i class="go"></i>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="implementation b_b b_t m_t_5">-->
+                <!--<div class="div_1 b_b">-->
+                    <!--<i class="m_r_5"></i>-->
+                    <!--<span class="m_r_10">海南航空</span>-->
+                    <!--<span class="m_r_15 js_fltNo">HU0129</span>-->
+                    <!--<span>2016-08-21</span>-->
+                    <!--&lt;!&ndash;<span class="_implementation">已出行</span>&ndash;&gt;-->
+                <!--</div>-->
+                <!--<div class="div_2">-->
+                    <!--<span>海口</span>-->
+                    <!--<i></i>-->
+                    <!--<span>北京</span>-->
+                    <!--<i class="go"></i>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="implementation b_b b_t m_t_5">-->
+                <!--<div class="div_1 b_b">-->
+                    <!--<i class="m_r_5"></i>-->
+                    <!--<span class="m_r_10">海南航空</span>-->
+                    <!--<span class="m_r_15 js_fltNo">HU0129</span>-->
+                    <!--<span>2016-08-21</span>-->
+                    <!--&lt;!&ndash;<span class="_implementation">已出行</span>&ndash;&gt;-->
+                <!--</div>-->
+                <!--<div class="div_2">-->
+                    <!--<span>海口</span>-->
+                    <!--<i></i>-->
+                    <!--<span>北京</span>-->
+                    <!--<i class="go"></i>-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+        <div class="consume b_t hide main">
+            <!--<div class="cf b_b">-->
+                <!--<i class="cash"></i>-->
+                <!--<span class="span1">对换50kg</span>-->
+                <!--<span class="span2">2017年1月23日</span>-->
+            <!--</div>-->
+            <!--<div class="cf b_b">-->
+                <!--<i class="integral"></i>-->
+                <!--<span class="span1">对换50kg</span>-->
+                <!--<span class="span2">2017年1月23日</span>-->
+            <!--</div>-->
+            <!--<div class="cf b_b">-->
+                <!--<i class="cash"></i>-->
+                <!--<span class="span1">对换50kg</span>-->
+                <!--<span class="span2">2017年1月23日</span>-->
+            <!--</div>-->
+            <!--<div class="cf b_b">-->
+                <!--<i class="integral"></i>-->
+                <!--<span class="span1">对换50kg</span>-->
+                <!--<span class="span2">2017年1月23日</span>-->
+            <!--</div>-->
+        </div>
+        <div class="tab b_t js_tab">
+            <span class="on" id="trip">出行记录</span>
+            <span id="carbon_elimination">消碳记录</span>
+        </div>
+    </section>
+</body>
+<!--<script src="lib/jquery.min.js"></script>-->
+<script src="lib/zepto.min.js"></script>
+<script src="js/index.js"></script>
+<script src="js/myitcast.js"></script>
+<script>
+    function carbonFootprint(){
+        $(".js_tab span").on('click',function(){
+            $(this).addClass("on").siblings().removeClass("on");
+            var index=$(this).index();
+            $(".main").eq(index).removeClass("hide").siblings(".main").addClass("hide");
+        })
+//        $(".js_plan .div_2").on("click",function(){
+//            var url='http://10.71.201.55/web/trip_information_plan.html';
+//            window.location.href=url;
+//        })
+        var fltInfolist=JSON.parse(sessionStorage.getItem("fltInfolist"));
+        var list=fltInfolist.fltInfolist;
+        console.log(list);
+        for(var i=0;i<list.length;i++){
+            var fltNo=list[i].fltNo,
+                time=list[i].departDate,
+                dep=list[i]. dep,
+                arr=list[i].arr,
+                t=$$.split(time);
+            var html='<div class="implementation b_b b_t m_t_5">' +
+                        '<div class="div_1 b_b">' +
+                            '<i class="m_r_5"></i>' +
+                            '<span class="m_r_10">海南航空</span>' +
+                            '<span class="m_r_15 js_fltNo">'+fltNo+'</span>' +
+                            '<span>'+t+'</span>' +
+                        '</div>' +
+                        '<div class="div_2">' +
+                            '<span>'+dep+'</span>' +
+                            '<i></i>' +
+                            '<span>'+arr+'</span>' +
+                            '<i class="go"></i>' +
+                        '</div>' +
+                    '</div>'
+            $(".js_trip").append(html);
+        }
+        $(".implementation").on("click",function(){
+            var id=$(this).index();
+            sessionStorage.setItem("tripid",id);
+            var url='http://10.21.136.133:8088/trip/frontend/appGreen/donate/trip_information.html';
+            window.location.href=url;
+        })
+        var list=JSON.parse(sessionStorage.getItem("list"));
+        for(var i= 0;i<list.length;i++){
+            var date=list[i].createTime.substr(0,10);
+            if(list[i].donationWays=="INTEGRALEXCHANGE"){
+                var html='<div class="cf b_b js_list">' +
+                        '<i class="integral"></i>' +
+                        '<span class="span1">对换50kg</span>' +
+                        '<span class="span2">'+date+'</span>' +
+                        '</div>'
+                $(".consume").append(html);
+            }
+            else if(list[i].donationWays=="CASHPAY"){
+                var _html='<div class="cf b_b js_list">' +
+                        '<i class="cash"></i>' +
+                        '<span class="span1">对换50kg</span>' +
+                        '<span class="span2">'+date+'</span>' +
+                        '</div>'
+                $(".consume").append(_html);
+            }
+        }
+        $(".consume").delegate("div","click",function(){
+            var id=$(this).index();
+            sessionStorage.setItem("listid",id);
+            var url='http://10.21.136.133:8088/trip/frontend/appGreen/donate/buy-tickets.html';
+            window.location.href=url;
+        })
+
+    }
+  carbonFootprint();
+</script>
+</html>

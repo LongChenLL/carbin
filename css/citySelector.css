@@ -1,0 +1,113 @@
+.citySelector .search{
+    padding: 0 0.36rem 0 0.42rem;
+    position: relative;
+}
+.citySelector .search > .back{
+    width: 0.32rem;
+    height: 0.36rem;
+    background: url("../images/back.png") no-repeat center;
+
+    vertical-align: middle;
+}
+.citySelector .search > input{
+    background-color:#f5f5f5; ;
+    /*margin-left: -0.4rem;*/
+    border: 1px solid #EDEDED;
+    border-radius: 0.15rem;
+    line-height: 0.56rem !important;
+    height: 0.56rem;
+    width: 72%;
+    font-size: 0.28rem;
+    vertical-align: middle;
+    padding-left: 12%;
+    font-family: "Microsoft Yahei";
+}
+.citySelector .search >.search-i{
+    position: absolute;
+    width: 0.26rem;
+    height: 0.56rem;
+    background: url("../images/search-icon.png") no-repeat center;
+    background-size: 100%;
+    top:0.4rem;
+    left: 1.1rem;
+}
+.citySelector .tab{
+    background-color: #fff;
+    border-top:1px solid  #EDEDED;
+    border-bottom:1px solid  #EDEDED;
+    line-height: 0.96rem;
+    height: 0.96rem;
+    padding-bottom: 0.01rem;
+}
+.citySelector .tab>span{
+    width: 30%;
+    text-align: center;
+    font-size: 0.34rem;
+    float: left;
+    font-family: "Microsoft Yahei";
+    margin:0 10%;
+}
+.citySelector .tab .on{
+    color: #57abef;
+    border-bottom: 2px solid #57abef;
+}
+.citySelector section{
+    padding: 0 0 0 0.3rem;
+    font-family: "Microsoft Yahei";
+}
+.citySelector .com >.title,
+.citySelector .inspiration >.title{
+    height: 0.8rem;
+    color: #b4b4b4;
+    font-size: 0.3rem;
+    line-height: 0.88rem;
+}
+.citySelector .inspiration >span{
+    width: 1.65rem;
+    height: 0.94rem;
+    padding: 0.08rem 0;
+    text-align: center;
+    border: 1px solid #dadada;
+    font-size: 0.3rem;
+    background-color: #fff;
+    margin-right: 0.1rem;
+    float: left;
+    margin-top: 0.08rem;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    overflow: hidden;
+    color: #dddddd;
+}
+.citySelector .com >span{
+    width: 1.65rem;
+    height: 0.74rem;
+    line-height: 0.74rem;
+    text-align: center;
+    border: 1px solid #dadada;
+    font-size: 0.3rem;
+    background-color: #fff;
+    margin-right: 0.1rem;
+    float: left;
+    margin-top: 0.08rem;
+}
+.citySelector .history >span:nth-of-type(1){
+    background: url("../images/location.png") no-repeat 0 0.1rem;
+}
+.citySelector .inspiration >span>em:nth-of-type(1){
+    color: #000000 !important;
+}
+.citySelector .inspiration >span>em:nth-of-type(2){
+    font-size: 0.24rem;
+}
+.citySelector .bar{
+    width: 0.65rem;
+    font-size: 0.24rem;
+    position: absolute;
+    right: 0.02rem;
+    top:2.2rem;
+    text-align: center;
+}
+.citySelector .bar>a{
+    display: block;
+    line-height: 0.5rem;
+}

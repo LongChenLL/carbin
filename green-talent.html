@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>绿色达人</title>
+    <link href="css/basic.css" rel="stylesheet">
+    <link href="css/public.css" rel="stylesheet">
+    <link href="css/green-talent.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+    <meta name="format-detection" content="telephone=no">
+</head>
+<body class="green-talent">
+    <header>达人榜</header>
+    <section>
+        <ol>
+            <li class="cf">
+                <span>
+                    <i class="list"></i>
+                    <span>1</span>
+                </span>
+                <span>等灯的人</span>
+                <span>123456789456</span>
+                <span>20kg</span>
+            </li>
+            <li class="cf">
+                <span>
+                    <i class="list"></i>
+                    <span>2</span>
+                </span>
+                <span>周勇</span>
+                <span>123456789456</span>
+                <span>20kg</span>
+            </li>
+            <li class="cf">
+                <span>
+                    <i class="list"></i>
+                    <span>3</span>
+                </span>
+                <span>左雅茹</span>
+                <span>123456789456</span>
+                <span>120kg</span>
+            </li>
+            <li class="cf">
+                <span>
+                    <span>4</span>
+                </span>
+                <span>周勇</span>
+                <span>123456789456</span>
+                <span>20kg</span>
+            </li>
+            <li class="cf">
+                <span>
+                    <span>5</span>
+                </span>
+                <span>大王派我来巡山抓个和桑做晚餐</span>
+                <span>123456789456</span>
+                <span>2000kg</span>
+            </li>
+        </ol>
+    </section>
+</body>
+<script src="lib/zepto.min.js"></script>
+<script src="js/index.js"></script>
+<script>
+    var tel = "13431230555";
+    if(tel.length==11){
+        n = tel.substring(0, 3) + "****" + tel.substring(11, 7);
+        console.log(n);
+    }
+</script>
+</html>

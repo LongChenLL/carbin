@@ -1,0 +1,119 @@
+.footprint section{
+    font-family: "microsoft yahei";
+    font-size: 0.28rem;
+}
+.footprint .login > span{
+    font-size: 0.36rem;
+    width: 50%;
+    line-height: 1rem;
+    float: left;
+    text-align: center;
+}
+.footprint .login > .on{
+    color: #e1524c;
+    border-bottom: 1px solid #e1524c;
+}
+.footprint .quantity{
+    line-height: 0.8rem;
+    padding: 0 5%;
+    background-color: #fff;
+    box-shadow: 0px 5px 8px #ccc;
+    color: #444D54;
+}
+.footprint .inp{
+    line-height:0.96rem ;
+    padding: 0 5%;
+    color: #9B9B9B;
+}
+.footprint .arrows{
+    width: 0.18rem;
+    height: 0.36rem;
+    background: url("../images/arrows.png") no-repeat;
+    background-size: 100%;
+    vertical-align: middle;
+    margin-left: 0.1rem;
+}
+.footprint .phone,
+.footprint .code{
+    font-size: 0.3rem;
+    line-height: 0.96rem;
+    background-color: #fff;
+    border-bottom: 1px solid #EDEDED;
+    padding: 0 5%;
+}
+.footprint .phone input,
+.footprint .code input{
+    width:68%;
+    /*text-align: right;*/
+    line-height: 0.96rem;
+    font-family: "microsoft yahei";
+}
+.footprint .code input{
+    width: 51%;
+    margin-right: 0.1rem;
+}
+.footprint .getcode{
+    width: 1.5rem;
+    height: 0.6rem;
+    font-size: 0.26rem;
+    line-height:0.6rem ;
+    text-align: center;
+    font-family: "Microsoft Yahei";
+    border-radius: 0.05rem;
+}
+.footprint .off{
+    color: #9B9B9B;;
+    background-color: #fff;
+    border: 1px solid #9B9B9B;
+}
+.footprint .code + a{
+    line-height: 0.7rem;
+    padding: 0 5%;
+    text-decoration: underline;
+    color: #727272;
+}
+.footprint .bt-query{
+    margin:0.8rem 0;
+    width: 4.95rem;
+    height: 0.8rem;
+    border-radius: 0.5rem;
+    color: #fff;
+    background-color: #e1524c;
+    margin-left: 0.66rem;
+    text-align: center;
+    line-height: 0.8rem;
+    font-size: 0.4rem;
+}
+.footprint .pub{
+    text-align: left !important;
+}
+.footprint .w_68{
+    width: 68% !important;
+}
+/*µ¯³ö²ã*/
+.footprint .mask{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 999;
+    background:rgba(0,0,0,.5);
+    top:0;
+    left: 0;
+    font-family: "microsoft yahei";
+    font-size: 0.28rem;
+}
+.footprint .box{
+    padding: 0 10px;
+    height: 30%;
+    text-align: center;
+    position: fixed;
+    z-index: 9999;
+    background-color:#fff;
+    margin: 30% 5% 0 5%;
+    border: 1px solid #E1E1E1;
+    border-radius: 0.1rem;
+}
+.footprint .box p{
+    text-indent:2rem;
+    text-align:justify;
+}

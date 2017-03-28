@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>支付</title>
+    <link href="css/basic.css" rel="stylesheet">
+    <link href="css/public.css" rel="stylesheet">
+    <link href="css/pay_success.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+    <meta name="format-detection" content="telephone=no">
+</head>
+<body class="pay_success">
+    <header></header>
+    <section>
+        <div class="content-1 content"></div>
+        <div class="content-2 content"></div>
+        <div class="content-3 content">
+            <div class="success">
+                <i></i>
+                <span>支付成功</span>
+            </div>
+            <p class="text title">尊敬的左雅茹</p>
+            <p class="text" style="text-align: justify">您于<em class="date">2017年12月12日</em>捐赠了<em class="f_c_r money">¥20</em>，用于植树xx棵。为出行抵消了<em class="kg f_c_lv">455kg</em>的二氧化碳。</p>
+            <a class="project-introduction">查看碳汇林</a>
+            <p class="text remind cf">
+                <i class="fl"></i>
+                <span class="fl">您的善款将由<em>中国绿色碳汇基金会</em>负责捐向<em id="friendlink">东塞港树林项目。</em></span>
+            </p>
+            <div class="carbon_foun cf">
+                <i></i>
+                <a href="#" class="f_c_lv">中国绿色碳汇基金会>></a>
+            </div>
+        </div>
+        <span class="sure">分享</span>
+    </section>
+</body>
+<!--<script src="lib/jquery.min.js"></script>-->
+<script src="lib/zepto.min.js"></script>
+<script src="js/index.js"></script>
+<script>
+    $(".project-introduction").on('click',function(){
+        var url='http://10.71.201.55/web/footprint.html';
+        window.location.href=url;
+    });
+    $("#friendlink").on('click',function(){
+        var url='http://10.71.201.55/web/project-introduction.html';
+        window.location.href=url;
+    });
+</script>
+</html>
